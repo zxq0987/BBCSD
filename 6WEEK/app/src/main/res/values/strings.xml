@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">6WEEK</string>
+    <string name="app_name">6week</string>
+    <string name="number">0</string>
+    <string name="Toast">Toast</string>
+    <string name="Count">Count</string>
+    <string name="Random">Random</string>
+    <string name="Random_Value">Random Value</string>
+    <string name="Back">Back</string>
+    <string name = "Main">Here is a random number between 0 and %1$d</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
