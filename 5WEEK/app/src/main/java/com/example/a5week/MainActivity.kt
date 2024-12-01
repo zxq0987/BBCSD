@@ -1,20 +1,56 @@
-package com.example.a5week
+package com.example.a5WEEK
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.a5WEEK.SecondActivity
+import com.example.a5WEEK.R
 
 class MainActivity : AppCompatActivity() {
+
+    private var count = 0
+    private lateinit var countTextView: TextView
+
+    private val activityResultLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == RESULT_OK) {
+            val newCount = result.data?.getIntExtra("newCount", count)
+            newCount?.let {
+                count = it
+                countTextView.text = count.toString()
+            }
+        }
+    }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        countTextView = findViewById(R.id.textViewCount)
+
+        val Toastbutton = findViewById< Button>(R.id.Toastbutton)
+        val Countbutton = findViewById<Button>(R.id.Countbutton)
+        val Randombutton = findViewById<Button>(R.id.Randombutton)
+
+        Toastbutton.setOnClickListener {
+            Toast.makeText(this, "Hello, Toast!", Toast.LENGTH_SHORT).show()
+        }
+
+        Countbutton.setOnClickListener {
+            count++
+            countTextView.text = count.toString()
+        }
+
+        Randombutton.setOnClickListener {
+            val intent = Intent(this, SecondActivity::class.java)
+            intent.putExtra("count", count)
+            activityResultLauncher.launch(intent)
         }
     }
 }
