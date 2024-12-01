@@ -1,9 +1,26 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme._4WEEK" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme._4WEEK." parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme._4WEEK" parent="Base.Theme._4WEEK" />
+    <style name = "BackgroundColor">
+        <item name = "android:background">@color/light_background</item>
+    </style>
+
+    <style name = "TextColor">
+        <item name = "android:textColor">@color/light_text</item>
+    </style>
+
+    <style name="TitleColor">
+        <item name="android:textColor">@color/naver_color</item>
+    </style>
+
+    <style name="ButtonStyle">
+        <item name="android:background">@color/naver_color</item>
+        <item name="android:textColor">@color/light_text</item>
+    </style>
+
+    <style name="Theme._4week" parent="Base.Theme._4WEEK" />
 </resources>

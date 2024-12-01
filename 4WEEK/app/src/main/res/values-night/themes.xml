@@ -1,7 +1,19 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme._4WEEK" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    <style name = "BackgroundColor">
+        <item name = "android:background">#000000</item>
     </style>
+
+    <style name="TextColor">
+        <item name="android:textColor">@color/dark_text</item>
+    </style>
+
+    <style name="TitleColor">
+        <item name="android:textColor">@color/dark_text</item>
+    </style>
+
+    <style name="ButtonStyle">
+        <item name="android:background">@color/naver_color</item>
+        <item name="android:textColor">@color/light_text</item>
+    </style>
+
 </resources>
