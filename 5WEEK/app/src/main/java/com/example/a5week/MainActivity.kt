@@ -8,7 +8,7 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.a5WEEK.SecondActivity
-import com.example.a5WEEK.R
+import com.example.a5week.R
 
 class MainActivity : AppCompatActivity() {
 
